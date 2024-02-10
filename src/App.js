@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import FComponent from './FComponent';
 
 function App() {
+  const [flag, setFlag] = useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+        <div>
+          <button onClick={()=> setFlag(!flag)}>Toggle Class component</button>
+        </div>
+        {flag ? <FComponent/> : <FComponent/>}
     </div>
   );
 }
